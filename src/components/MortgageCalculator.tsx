@@ -210,7 +210,18 @@ const MortgageCalculator = () => {
                 onCheckedChange={() => toggleBonificacion(b.key)}
               />
               <span className="flex-1 font-medium">{b.label}</span>
-              <span className="text-sm text-primary font-semibold">-{b.descuento.toFixed(2)}%</span>
+              <div className="flex items-center gap-1">
+                <span className="text-sm text-muted-foreground">-</span>
+                <Input
+                  type="number"
+                  step="0.01"
+                  className="w-20 h-8 text-sm text-center"
+                  value={descuentos[b.key]}
+                  onChange={(e) => setDescuentos(prev => ({ ...prev, [b.key]: e.target.value }))}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                <span className="text-sm text-muted-foreground">%</span>
+              </div>
             </label>
           ))}
         </div>
