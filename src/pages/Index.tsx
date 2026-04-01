@@ -30,8 +30,8 @@ const Index = () => {
       <main className="container mx-auto px-4 py-6">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-2">
-            <TabsTrigger value="cuota">Calcular Cuota</TabsTrigger>
-            <TabsTrigger value="precio">Precio Máximo</TabsTrigger>
+            <TabsTrigger value="cuota">Calcular Cuota Hipotecaria</TabsTrigger>
+            <TabsTrigger value="precio">Precio Máximo de Compra</TabsTrigger>
           </TabsList>
 
           {/* Subtitle */}

@@ -51,11 +51,12 @@ const MortgageCalculator = () => {
   const itp = parseFloat(itpPorcentaje) || 0;
   const impuestos = precio * (itp / 100);
   const comision = precio * COMISION_PCT;
-  const capitalAporte = inicial + impuestos + comision + NOTARIA_FIJA;
+  const notariaVal = parseFloat(notaria) || 0;
+  const capitalAporte = inicial + impuestos + comision + notariaVal;
   const capitalPendiente = precio - inicial;
 
   const totalBonificacion = BONIFICACIONES.reduce((acc, b) => {
-    return acc + (bonificaciones[b.key] ? b.descuento : 0);
+    return acc + (bonificaciones[b.key] ? (parseFloat(descuentos[b.key]) || 0) : 0);
   }, 0);
 
   const calcular = useCallback(() => {
