@@ -29,6 +29,7 @@ const MortgageCalculator = () => {
   const [itpPorcentaje, setItpPorcentaje] = useState("");
   const [interes, setInteres] = useState("");
   const [anos, setAnos] = useState("");
+  const [notaria, setNotaria] = useState("2000");
   const [cuota, setCuota] = useState<number | null>(null);
   const [bonificaciones, setBonificaciones] = useState<BonificacionState>({
     seguroHogar: false,
@@ -36,6 +37,13 @@ const MortgageCalculator = () => {
     nomina: false,
     tarjetaCredito: false,
     seguroImpagos: false,
+  });
+  const [descuentos, setDescuentos] = useState<Record<keyof BonificacionState, string>>({
+    seguroHogar: "0.10",
+    seguroVida: "0.10",
+    nomina: "0.15",
+    tarjetaCredito: "0.05",
+    seguroImpagos: "0.10",
   });
 
   const precio = parseFloat(precioCompra) || 0;
