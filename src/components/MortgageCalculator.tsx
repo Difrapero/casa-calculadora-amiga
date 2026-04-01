@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const COMISION_PCT = 0.03;
-const NOTARIA_FIJA = 2000;
 
 interface BonificacionState {
   seguroHogar: boolean;
@@ -30,6 +29,7 @@ const MortgageCalculator = () => {
   const [itpPorcentaje, setItpPorcentaje] = useState("");
   const [interes, setInteres] = useState("");
   const [anos, setAnos] = useState("");
+  const [notaria, setNotaria] = useState("2000");
   const [cuota, setCuota] = useState<number | null>(null);
   const [bonificaciones, setBonificaciones] = useState<BonificacionState>({
     seguroHogar: false,
@@ -38,17 +38,25 @@ const MortgageCalculator = () => {
     tarjetaCredito: false,
     seguroImpagos: false,
   });
+  const [descuentos, setDescuentos] = useState<Record<keyof BonificacionState, string>>({
+    seguroHogar: "0.10",
+    seguroVida: "0.10",
+    nomina: "0.15",
+    tarjetaCredito: "0.05",
+    seguroImpagos: "0.10",
+  });
 
   const precio = parseFloat(precioCompra) || 0;
   const inicial = precio * inicialPct;
   const itp = parseFloat(itpPorcentaje) || 0;
   const impuestos = precio * (itp / 100);
   const comision = precio * COMISION_PCT;
-  const capitalAporte = inicial + impuestos + comision + NOTARIA_FIJA;
+  const notariaVal = parseFloat(notaria) || 0;
+  const capitalAporte = inicial + impuestos + comision + notariaVal;
   const capitalPendiente = precio - inicial;
 
   const totalBonificacion = BONIFICACIONES.reduce((acc, b) => {
-    return acc + (bonificaciones[b.key] ? b.descuento : 0);
+    return acc + (bonificaciones[b.key] ? (parseFloat(descuentos[b.key]) || 0) : 0);
   }, 0);
 
   const calcular = useCallback(() => {
@@ -130,7 +138,7 @@ const MortgageCalculator = () => {
             </div>
             <div>
               <Label className="text-muted-foreground text-sm">Notaría (€)</Label>
-              <Input value={formatEur(NOTARIA_FIJA)} disabled />
+              <Input type="number" value={notaria} onChange={(e) => setNotaria(e.target.value)} placeholder="2000" />
             </div>
             <div>
               <Label className="text-muted-foreground text-sm">Capital Aporte (€)</Label>
@@ -202,7 +210,18 @@ const MortgageCalculator = () => {
                 onCheckedChange={() => toggleBonificacion(b.key)}
               />
               <span className="flex-1 font-medium">{b.label}</span>
-              <span className="text-sm text-primary font-semibold">-{b.descuento.toFixed(2)}%</span>
+              <div className="flex items-center gap-1">
+                <span className="text-sm text-muted-foreground">-</span>
+                <Input
+                  type="number"
+                  step="0.01"
+                  className="w-20 h-8 text-sm text-center"
+                  value={descuentos[b.key]}
+                  onChange={(e) => setDescuentos(prev => ({ ...prev, [b.key]: e.target.value }))}
+                  onClick={(e) => e.stopPropagation()}
+                />
+                <span className="text-sm text-muted-foreground">%</span>
+              </div>
             </label>
           ))}
         </div>
