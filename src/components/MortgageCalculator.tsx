@@ -138,7 +138,7 @@ const MortgageCalculator = () => {
             </div>
             <div>
               <Label className="text-muted-foreground text-sm">Notaría (€)</Label>
-              <Input value={formatEur(NOTARIA_FIJA)} disabled />
+              <Input type="number" value={notaria} onChange={(e) => setNotaria(e.target.value)} placeholder="2000" />
             </div>
             <div>
               <Label className="text-muted-foreground text-sm">Capital Aporte (€)</Label>
