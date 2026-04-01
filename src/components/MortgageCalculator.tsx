@@ -6,7 +6,6 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 
 const COMISION_PCT = 0.03;
-const NOTARIA_FIJA = 2000;
 
 interface BonificacionState {
   seguroHogar: boolean;
