@@ -46,8 +46,17 @@ const LeadForm = () => {
         Solicita tu estudio hipotecario gratuito
       </p>
 
-      <form name="leads-hipoteca" method="POST" data-netlify="true" onSubmit={handleSubmit}>
+      <form
+        name="leads-hipoteca"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+      >
         <input type="hidden" name="form-name" value="leads-hipoteca" />
+
+        {/* 🔴 Campo anti-spam (honeypot) */}
+        <input type="hidden" name="bot-field" />
 
         <div className="space-y-3">
           <div>
