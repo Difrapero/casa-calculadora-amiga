@@ -6,6 +6,11 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
+// 🔴 IMPORTAMOS LAS PÁGINAS LEGALES
+import Privacy from "./pages/Privacy.tsx";
+import Cookies from "./pages/cookies.tsx";
+import Legal from "./pages/Legal.tsx";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -16,7 +21,13 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+
+          {/* 🔴 RUTAS LEGALES */}
+          <Route path="/privacidad" element={<Privacy />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/aviso-legal" element={<Legal />} />
+
+          {/* NO TOCAR */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
