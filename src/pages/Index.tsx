@@ -64,9 +64,15 @@ const Index = () => {
 
       {/* Footer */}
       <footer className="bg-card border-t border-border py-6 text-center">
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-muted-foreground mb-3">
           © {new Date().getFullYear()} calculadorahipotecaria.es — Herramienta informativa. Consulta con un profesional.
         </p>
+
+        <div className="flex justify-center gap-4 flex-wrap text-sm">
+          <a href="/privacidad" className="hover:underline">Política de Privacidad</a>
+          <a href="/cookies" className="hover:underline">Cookies</a>
+          <a href="/aviso-legal" className="hover:underline">Aviso Legal</a>
+        </div>
       </footer>
     </div>
   );
