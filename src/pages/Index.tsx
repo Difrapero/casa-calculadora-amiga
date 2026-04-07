@@ -5,11 +5,16 @@ import MaxPriceCalculator from "@/components/MaxPriceCalculator";
 import LeadForm from "@/components/LeadForm";
 import AdBanner from "@/components/AdBanner";
 
-const Index = () => {
-  const [activeTab, setActiveTab] = useState("cuota");
+// 👇 Definimos el tipo correcto
+type TabType = "cuota" | "precio";
 
-  const subtitles: Record<string, string> = {
-    cuota: "Calcula tu cuota hipotecaria – Con o sin Bonificaciones según el ingreso neto",
+const Index = () => {
+  // 👇 Tipamos correctamente el estado
+  const [activeTab, setActiveTab] = useState<TabType>("cuota");
+
+  // 👇 Ahora TypeScript sabe que las claves coinciden
+  const subtitles: Record<TabType, string> = {
+    cuota: "Calcula tu cuota hipotecaria – Con o sin bonificaciones según el ingreso neto",
     precio: "Precio máximo de compra según los ingresos netos",
   };
 
