@@ -70,7 +70,7 @@ const Index = () => {
 
         <div className="flex justify-center gap-4 flex-wrap text-sm">
           <a href="/privacidad" className="hover:underline">Política de Privacidad</a>
-          <a href="/cookies" className="hover:underline">Cookies</a>
+          <a href="/Cookies" className="hover:underline">Cookies</a>
           <a href="/aviso-legal" className="hover:underline">Aviso Legal</a>
         </div>
       </footer>
