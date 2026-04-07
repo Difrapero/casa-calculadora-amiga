@@ -9,7 +9,7 @@ import NotFound from "./pages/NotFound.tsx";
 
 // 🔴 Páginas legales
 import Privacy from "./pages/Privacy.tsx";
-import Cookies from "./pages/cookies.tsx";
+import Cookies from "./pages/Cookies.tsx";
 import Legal from "./pages/Legal.tsx";
 
 // 🍪 Banner cookies
