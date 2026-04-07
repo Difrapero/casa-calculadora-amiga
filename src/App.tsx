@@ -32,7 +32,7 @@ const App = () => (
 
           {/* 🔴 Rutas legales */}
           <Route path="/privacidad" element={<Privacy />} />
-          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/Cookies" element={<Cookies />} />
           <Route path="/aviso-legal" element={<Legal />} />
 
           {/* NO TOCAR */}
