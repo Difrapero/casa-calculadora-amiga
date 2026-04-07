@@ -34,7 +34,6 @@ const Index = () => {
             <TabsTrigger value="precio">Precio Máximo de Compra</TabsTrigger>
           </TabsList>
 
-          {/* Subtitle */}
           <p className="text-center text-muted-foreground text-sm mb-6">
             {subtitles[activeTab]}
           </p>
@@ -70,7 +69,7 @@ const Index = () => {
 
         <div className="flex justify-center gap-4 flex-wrap text-sm">
           <a href="/privacidad" className="hover:underline">Política de Privacidad</a>
-          <a href="/Cookies" className="hover:underline">Cookies</a>
+          <a href="/cookies" className="hover:underline">Cookies</a>
           <a href="/aviso-legal" className="hover:underline">Aviso Legal</a>
         </div>
       </footer>
