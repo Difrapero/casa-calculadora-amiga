@@ -287,12 +287,6 @@
   .source-link { display: inline-flex; align-items: center; gap: .4rem; color: var(--teal); font-weight: 850; }
   .source-link svg { width: 15px; }
   .inline-link { margin-top: 1rem; }
-  .contact-grid { display: grid; grid-template-columns: .65fr 1.35fr; align-items: start; gap: 3rem; }
-  .contact-copy { border-radius: 18px; background: var(--sand); padding: 1.5rem; }
-  .contact-copy > svg { width: 32px; color: var(--teal); }
-  .contact-copy h2 { margin: 1rem 0 .4rem; font-family: Georgia, serif; font-size: 1.8rem; }
-  .contact-copy a { color: var(--teal); font-weight: 850; }
-  .contact-copy p { margin-top: 1rem; color: var(--ink-muted); font-size: .8rem; }
   .not-found { display: grid; min-height: 70vh; place-items: center; align-content: center; padding: 2rem; text-align: center; }
   .not-found > span { color: var(--coral); font-family: Georgia, serif; font-size: 5rem; }
   .not-found h1 { color: var(--navy); font-family: Georgia, serif; font-size: 2.5rem; }
@@ -367,7 +361,6 @@
   .guide-grid, .guide-index-grid, .methodology-grid, .values-grid { grid-template-columns: 1fr; }
   .guide-card { min-height: 270px; }
   .article-layout { width: min(100% - 2rem, 1180px); padding-top: 2rem; }
-  .contact-grid { grid-template-columns: 1fr; }
   .cookie-table > div { grid-template-columns: 1fr; gap: .25rem; }
   .legal-data > div { grid-template-columns: 1fr; gap: .2rem; }
   .consent-panel { grid-template-columns: 1fr; max-height: calc(100vh - 2rem); overflow: auto; }
