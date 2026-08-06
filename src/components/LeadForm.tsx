@@ -141,7 +141,7 @@ const LeadForm = ({ calculation = {}, compact = false }: LeadFormProps) => {
         </label>
 
         <p className="privacy-layer">
-          Responsable: {siteConfig.legalName}. Finalidad: responder a tu solicitud. Base: medidas precontractuales solicitadas por ti; consentimiento para comunicaciones opcionales. Puedes ejercer tus derechos en {siteConfig.contactEmail}.
+          Responsable: {siteConfig.legalName}. Finalidad: responder a tu solicitud. Base: medidas precontractuales solicitadas por ti; consentimiento para comunicaciones opcionales. Consulta cómo ejercer tus derechos en la <Link to="/privacidad">política de privacidad</Link>.
         </p>
 
         {formError && <p className="form-error" role="alert">{formError}</p>}
