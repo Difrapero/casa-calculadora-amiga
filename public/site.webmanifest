@@ -1,0 +1,12 @@
+{
+  "name": "Tu Hipoteca Clara",
+  "short_name": "Hipoteca Clara",
+  "description": "Calculadoras hipotecarias transparentes.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f5ef",
+  "theme_color": "#073b4c",
+  "icons": [
+    { "src": "/logo-mark.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Tu Hipoteca Clara">
+  <rect width="64" height="64" rx="16" fill="#073b4c"/>
+  <path d="M13 31 32 15l19 16v20H38V38H26v13H13Z" fill="#f5efe3"/>
+  <path d="M42 13v11l-7-6v-5Z" fill="#f5efe3"/>
+  <circle cx="47" cy="45" r="10" fill="#e86f51"/>
+  <path d="m42.5 45 3 3 6-7" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
