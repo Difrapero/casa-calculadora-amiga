@@ -153,7 +153,10 @@
   .bonus-option { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: .55rem; border: 1px solid #dce4e1; border-radius: 10px; background: white; padding: .65rem; cursor: pointer; }
   .bonus-option span { color: #36585f; font-size: .79rem; }
   .bonus-option strong { color: var(--teal); font-size: .75rem; }
-  .result-panel { position: sticky; top: 96px; overflow: hidden; border: 0; border-radius: 20px; background: var(--navy); color: white; box-shadow: 0 22px 50px #073b4c22; }
+  /* Card adds .bg-card/.text-card-foreground after the component styles. Keep the
+     result surface explicit so the white-on-white failure cannot return. */
+  .result-panel.bg-card { position: sticky; top: 96px; overflow: hidden; border: 0; border-radius: 20px; background: var(--navy); color: white; box-shadow: 0 22px 50px #073b4c22; }
+  .result-panel.text-card-foreground { color: white; }
   .result-panel-header { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #ffffff1f; padding: 1rem 1.2rem; color: #d4e6e7; font-size: .76rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
   .result-status { display: inline-flex; align-items: center; gap: .3rem; color: #8ee0c5; font-size: .66rem; }
   .result-status svg { width: 14px; }
